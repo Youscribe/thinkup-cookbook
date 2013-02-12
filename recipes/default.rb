@@ -18,6 +18,8 @@
 # limitations under the License.
 #
 
+include_recipe "git"
+
 application "thinkup" do
   path "/opt/thinkup"
   repository node['thinkup']['repository']
@@ -26,7 +28,7 @@ application "thinkup" do
   owner node[:apache][:user]
   group node[:apache][:user]
 
-  packages["php-pear","php5-mysql","php5-curl"]
+  packages ["php-pear","php5-mysql","php5-curl", "php5-gd"]
 
   mod_php_apache2
 end
