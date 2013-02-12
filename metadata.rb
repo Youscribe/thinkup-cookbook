@@ -8,5 +8,6 @@ version          "0.0.1"
       supports os
 end
 
+depends "git"
 depends "application"
 depends "application_php"
